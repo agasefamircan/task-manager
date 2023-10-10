@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private isAuthenticated = false;
   static signIn: any;
 
-  constructor() { }
+  constructor() {}
   signIn(email: string, password: string): boolean {
     const storedEmail = localStorage.getItem('signupEmail');
     const storedPassword = localStorage.getItem('signupPassword');
-    if (email===storedEmail && password===storedPassword ) {
+    if (email === storedEmail && password === storedPassword) {
       // this.isAuthenticated = true;
       return true;
     } else {
@@ -19,7 +19,6 @@ export class AuthService {
       return false;
     }
   }
-
   signOut(): void {
     this.isAuthenticated = false;
   }
