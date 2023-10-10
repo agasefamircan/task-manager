@@ -12,10 +12,10 @@ export class AuthService {
     const storedEmail = localStorage.getItem('signupEmail');
     const storedPassword = localStorage.getItem('signupPassword');
     if (email===storedEmail && password===storedPassword ) {
-      this.isAuthenticated = true;
+      // this.isAuthenticated = true;
       return true;
     } else {
-      this.isAuthenticated = false;
+      // this.isAuthenticated = false;
       return false;
     }
   }

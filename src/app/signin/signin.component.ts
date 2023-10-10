@@ -5,27 +5,22 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent {
-   
   email: string = '';
   password: string = '';
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  errorMessage=false;
-  signIn = AuthService.signIn
+  // errorMessage = false;
+  signIn = AuthService.signIn;
   AuthService: any;
 
-
-
-  onSignIn(){
-    
+  onSignIn() {
     if (this.authService.signIn(this.email, this.password)) {
       this.router.navigate(['/']);
-    }
-    else{
+    } else {
       alert('Invalid email or password. Please try again.');
     }
   }

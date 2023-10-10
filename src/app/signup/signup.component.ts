@@ -37,7 +37,7 @@ export class SignupComponent {
       this.user.password = '';
     }
 
-    // this.router.navigate(['/signin']);
+    this.router.navigate(['/signin']);
   }
 
   validateForm(): boolean {
