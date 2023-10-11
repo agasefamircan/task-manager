@@ -10,9 +10,9 @@ export class SignupComponent {
   user = {
     email: '',
     password: '',
+    orgName: ''
   };
 
-  orgName = '';
   phone = '';
   address = '';
   userName = '';
@@ -27,9 +27,11 @@ export class SignupComponent {
       alert('User and organization profiles created successfully.');
       console.log('Email: ' + this.user.email);
       console.log('Password: ' + this.user.password);
+      console.log('OrgName: ' + this.user.orgName);
       localStorage.setItem('signupEmail', this.user.email);
       localStorage.setItem('signupPassword', this.user.password);
-      this.orgName = '';
+      localStorage.setItem('signupOrgName', this.user.orgName);
+      this.user.orgName = '';
       this.phone = '';
       this.address = '';
       this.userName = '';
@@ -42,7 +44,7 @@ export class SignupComponent {
 
   validateForm(): boolean {
     if (
-      !this.orgName ||
+      !this.user.orgName ||
       !this.phone ||
       !this.address ||
       !this.userName ||

@@ -6,7 +6,7 @@
         type="text"
         id="orgName"
         name="orgName"
-        [(ngModel)]="orgName"
+        [(ngModel)]="user.orgName"
         required
       />
     </div>
@@ -56,7 +56,7 @@
     </div>
     <div class="btn-group">
       <button type="submit">Sign Up</button>
-      <p>Do you have an account? <a href="/signin">Sign In</a></p>
+      <p>Do you have an account? <a routerLink="/signin">Sign In</a></p>
     </div>
   </form>
 </div>
