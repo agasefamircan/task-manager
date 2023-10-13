@@ -1,6 +1,12 @@
 .mat-toolbar-row{
     justify-content: space-around;
 }
+span{
+  color: #fff ;
+}
+.org-name{
+  color: #12355b;
+}
 button {
     background-color: #007bff;
     color: #fff;

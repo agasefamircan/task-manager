@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span> Logo</span>
+   <a href="/"> <span> Logo</span> </a>
     <span class="spacer"></span>
     <ng-container *ngIf="orgName; else signUpButton">
-      <span>{{ orgName }}</span>
+      <span>Welcome, <span class="org-name">{{ orgName }}</span></span>
     </ng-container>
     <ng-template #signUpButton>
       <button mat-button routerLink="/signup">Sign Up</button>

@@ -1,0 +1,35 @@
+<div class="task-container">
+  <h2>Create Task</h2>
+  <!-- <form (submit)="createTask()">
+    <input
+      [(ngModel)]="newTask.title"
+      placeholder="Title"
+      required
+      name="title"
+    />
+    <input
+      [(ngModel)]="newTask.description"
+      placeholder="Description"
+      required
+      name="description"
+    />
+    <input [(ngModel)]="newTask.deadline" type="date" name="date" />
+    <select [(ngModel)]="newTask.status" name="status">
+      <option value="To-Do">To-Do</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Done">Done</option>
+    </select>
+    <button type="submit">Create Task</button>
+  </form> -->
+  <button mat-button (click)="TaskDialog()">Create Task</button>
+
+  <h2>Tasks</h2>
+  <ul class="task-list">
+    <li *ngFor="let task of getTasks()" class="task-item">
+      <div class="task-title">{{ task.title }}</div>
+      <div class="task-status">{{ task.status }}</div>
+      <button (click)="editTask(task)">Edit</button>
+    <button *ngIf="task.id !== undefined" (click)="deleteTask(task.id)">Delete</button>
+    </li>
+  </ul>
+</div>

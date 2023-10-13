@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>{{ editing ? 'Edit Task' : 'Create Task' }}>Create Task</h1>
+<div mat-dialog-content>
+  <form (submit)="onSubmit()">
+    <mat-form-field>
+      <input matInput [(ngModel)]="selectedTask.title" placeholder="Title" required name="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="selectedTask.description" placeholder="Description" required name="description" />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="selectedTask.deadline" type="date" name="date" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Status" [(ngModel)]="selectedTask.status" name="status">
+        <mat-option value="To-Do">To-Do</mat-option>
+        <mat-option value="In Progress">In Progress</mat-option>
+        <mat-option value="Done">Done</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button  mat-button type="submit">{{ getButtonText() }}</button>
+  </form>
+</div>

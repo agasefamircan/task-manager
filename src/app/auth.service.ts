@@ -26,4 +26,7 @@ export class AuthService {
   isAuthenticatedUser(): boolean {
     return this.isAuthenticated;
   }
+  getOrgName(){
+    return localStorage.getItem('signupOrgName') ?? ''; 
+  }
 }

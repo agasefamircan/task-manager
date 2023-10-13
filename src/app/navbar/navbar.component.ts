@@ -1,18 +1,22 @@
-import { Component, Input,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  orgName:string='';
+  orgName: string = '';
 
-  constructor(){}
+  constructor(private userService: UserService) {
+    this.userService.orgName&&((name: string) => {
+      this.orgName = name;
+    });
+  }
 
   ngOnInit(): void {
-    this.orgName = localStorage.getItem('signupOrgName') ?? "";
+    // take organization name from localStorage
+    this.orgName = localStorage.getItem('signupOrgName') ?? '';
   }
-  
-
 }
